@@ -1,0 +1,155 @@
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #e3f2fd;" >
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{{ url_for('home') }}">Programming Language Analytics</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ url_for('basic_stats') }}">Basic Stats</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ url_for('used_data') }}">Data Used</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ url_for('graph') }}">Graphs</a>
+        </li>
+    </div>
+  </div>
+</nav>
+<h1>Analytics on popularity of Programming Languages</h1>
+
+</head>
+<body>
+<br><br>
+<h5><u>Visualization of Popularity of Programming Languages</u></h5>
+<div id="graph">
+
+
+<script>
+    var graphJsonsc = {{ graph_jsonsc|safe }};
+    Plotly.plot('graph', graphJsonsc);
+</script>
+</div>
+<span>
+      <img width=1000 height=600 src="{{url_for('static', filename='all.png')}}">
+</span>
+<p>From the above graph,it looks like Python is the most popular programming language 
+judging by the number of posts on Stack Overflow!</p>
+<p>Javascript is at second place, Java is at third place and so on.</p>
+<p>Python has approx. 30k posts in year 2020 and it is increasing every year.</p>
+<p>Javascript has approx 23k Posts and increasing continuosly after a  big drop.</p>
+<p>Java was at its in peak in the year 2014 with approx. 20k posts.</p>
+
+<br><br>
+<h5><u>Visualization of Posts/Year of Assembly Language</u></h5>
+<span>
+      <img width=1000 height=600 src="{{url_for('static', filename='assembly.png')}}">
+</span>
+<p>As we can see from the graph, assembly is not a popular language. It is beacause it is very difficult and complex. It has maximum 455 posts.</p>
+
+<br><br>
+
+<h5><u>Visualization of Posts/Year of C Language</u></h5>
+<span>
+      <img width=1000 height=600 src="{{url_for('static', filename='c.png')}}">
+</span>
+<p>As we can see from the graph, C is not a popular language at this time. It is beacause it is very difficult and complex. It has approx. 5K posts at its peak.</p>
+
+<br><br>
+<h5><u>Visualization of Posts/Year of C# Language</u></h5>
+<span>
+      <img width=1000 height=600 src="{{url_for('static', filename='c#.png')}}">
+</span>
+<p>As we can see from the graph, C# was a popular language around the year 2014 but after that it starts losing its popularity. It has approx. 17K posts at its peak.</p>
+
+<br><br>
+<h5><u>Visualization of Posts/Year of C++ Language</u></h5>
+<span>
+      <img width=1000 height=600 src="{{url_for('static', filename='c++.png')}}">
+</span>
+<p>As we can see from the graph, C++ was a popular language around the year 2014. It has approx. 9K posts at its peak.</p>
+
+<br><br>
+<h5><u>Visualization of Posts/Year of Delphi Language</u></h5>
+<span>
+      <img width=1000 height=600 src="{{url_for('static', filename='delphi.png')}}">
+</span>
+<p>As we can see from the graph, Delphi is not a popular language. It has maximum 574 posts.</p>
+
+<br><br>
+<h5><u>Visualization of Posts/Year of Go Language</u></h5>
+<span>
+      <img width=1000 height=600 src="{{url_for('static', filename='go.png')}}">
+</span>
+<p>As we can see from the graph, Go is not a popular language. It has maximum 887 posts.</p>
+
+<br><br>
+<h5><u>Visualization of Posts/Year of Java Language</u></h5>
+<span>
+      <img width=1000 height=600 src="{{url_for('static', filename='java.png')}}">
+</span>
+<p>As we can see from the graph, Java was at top around the year 2014.It is one of the most polpular programming languages until now. It has approx. 22K posts at its peak.</p>
+
+<br><br>
+<h5><u>Visualization of Posts/Year of Javascript Language</u></h5>
+<span>
+      <img width=1000 height=600 src="{{url_for('static', filename='javascript.png')}}">
+</span>
+<p>As we can see from the graph, Javascript is the second most popular programming language . It has approx. 26K posts in the year 2020 and they are increasing year by year.</p>
+
+<br><br>
+<h5><u>Visualization of Posts/Year of Perl Language</u></h5>
+<span>
+      <img width=1000 height=600 src="{{url_for('static', filename='perl.png')}}">
+</span>
+<p>As we can see from the graph, Perl is not a popular language. It has maximum 984 posts.</p>
+
+<br><br>
+<h5><u>Visualization of Posts/Year of Php Language</u></h5>
+<span>
+      <img width=1000 height=600 src="{{url_for('static', filename='php.png')}}">
+</span>
+<p>As we can see from the graph, Php was a popular language around the year 2014 but after that it starts losing its popularity. It has approx. 19K posts at its peak.</p>
+
+<br><br>
+<h5><u>Visualization of Posts/Year of Python Language</u></h5>
+<span>
+      <img width=1000 height=600 src="{{url_for('static', filename='python.png')}}">
+</span>
+<p>As we can see from the graph, Python is the most popular programming language . It has approx. 35K posts in the year 2020 and they are increasing year by year.</p>
+
+<br><br>
+<h5><u>Visualization of Posts/Year of R Language</u></h5>
+<span>
+      <img width=1000 height=600 src="{{url_for('static', filename='r.png')}}">
+</span>
+<p>As we can see from the graph, R is not a popular language. It has approx. 7K posts at its peak.</p>
+
+<br><br>
+<h5><u>Visualization of Posts/Year of Ruby Language</u></h5>
+<span>
+      <img width=1000 height=600 src="{{url_for('static', filename='ruby.png')}}">
+</span>
+<p>As we can see from the graph, Ruby is not a popular language. It has approx. 3K posts at its peak. It gained some popularity in the year 2014</p>
+
+<br><br>
+<h5><u>Visualization of Posts/Year of Swift Language</u></h5>
+<span>
+      <img width=1000 height=600 src="{{url_for('static', filename='swift.png')}}">
+</span>'
+<p>As we can see from the graph, Swift is not a popular language. It has approx. 6K posts at its peak. It gained some popularity in the year 2015</p>
+
+</body>
